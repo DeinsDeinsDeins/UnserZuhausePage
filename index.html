@@ -627,8 +627,65 @@
   var CORRECT_PASSWORD = 'unser_zuhause';
 
   (function() {
-    var overlay = document.getElementById('login-overlay');
-    var errEl   = document.getElementById('login-error');
+    var overlay   = document.getElementById('login-overlay');
+    var errEl     = document.getElementById('login-error');
+    var music     = document.getElementById('bg-music');
+    var muteBtn   = document.getElementById('mute-btn');
+    var scrollBtn = document.getElementById('scroll-btn');
+
+    // ── shared state — defined once ──
+    var autoScrolling = false;
+    var scrollRaf     = null;
+    var initialized   = false;
+    var scrollSpeed   = 0.35;
+
+    function stopScroll() {
+      autoScrolling = false;
+      cancelAnimationFrame(scrollRaf);
+      scrollBtn.classList.remove('active');
+      scrollBtn.textContent = '▶';
+    }
+
+    function startScroll() {
+      autoScrolling = true;
+      scrollBtn.classList.add('active');
+      scrollBtn.textContent = '⏸';
+      scrollRaf = requestAnimationFrame(autoScrollStep);
+    }
+
+    function autoScrollStep() {
+      if (!autoScrolling) return;
+      var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (window.scrollY >= maxScroll) { stopScroll(); return; }
+      window.scrollBy(0, scrollSpeed);
+      scrollRaf = requestAnimationFrame(autoScrollStep);
+    }
+
+    function initListeners() {
+      if (initialized) return;
+      initialized = true;
+
+      muteBtn.style.display = 'flex';
+      scrollBtn.style.display = 'flex';
+
+      muteBtn.addEventListener('click', function() {
+        music.muted = !music.muted;
+        muteBtn.textContent = music.muted ? '♪̶' : '♪';
+        muteBtn.style.opacity = music.muted ? '0.4' : '1';
+      });
+
+      scrollBtn.addEventListener('click', function() {
+        if (autoScrolling) { stopScroll(); } else { startScroll(); }
+      });
+
+      window.addEventListener('wheel', function() {
+        if (autoScrolling) stopScroll();
+      }, { passive: true });
+
+      window.addEventListener('touchstart', function() {
+        if (autoScrolling) stopScroll();
+      }, { passive: true });
+    }
 
     function attempt() {
       var u = document.getElementById('login-user').value.trim();
@@ -636,73 +693,19 @@
       if (u === CORRECT_USERNAME && p === CORRECT_PASSWORD) {
         overlay.classList.add('hidden');
         setTimeout(function() { overlay.style.display = 'none'; }, 900);
+
+        // reset everything before restarting
+        stopScroll();
         window.scrollTo(0, 0);
-        var music = document.getElementById('bg-music');
-        var muteBtn = document.getElementById('mute-btn');
         music.currentTime = 0;
         music.volume = 0.4;
+        music.muted = false;
+        muteBtn.textContent = '♪';
+        muteBtn.style.opacity = '1';
         music.play();
-        muteBtn.style.display = 'flex';
-        muteBtn.addEventListener('click', function() {
-          music.muted = !music.muted;
-          muteBtn.textContent = music.muted ? '♪̶' : '♪';
-          muteBtn.style.opacity = music.muted ? '0.4' : '1';
-        });
 
-        // ── AUTO-SCROLL ──
-        var scrollBtn = document.getElementById('scroll-btn');
-        scrollBtn.style.display = 'flex';
-        var autoScrolling = true;
-        var scrollSpeed = 0.35; // px per frame — slow & cinematic
-        var scrollRaf;
-
-        scrollBtn.classList.add('active');
-        scrollBtn.textContent = '⏸';
-        scrollRaf = requestAnimationFrame(autoScrollStep);
-
-        function autoScrollStep() {
-          if (!autoScrolling) return;
-          var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-          if (window.scrollY >= maxScroll) {
-            autoScrolling = false;
-            scrollBtn.classList.remove('active');
-            scrollBtn.textContent = '▶';
-            return;
-          }
-          window.scrollBy(0, scrollSpeed);
-          scrollRaf = requestAnimationFrame(autoScrollStep);
-        }
-
-        scrollBtn.addEventListener('click', function() {
-          autoScrolling = !autoScrolling;
-          if (autoScrolling) {
-            scrollBtn.classList.add('active');
-            scrollBtn.textContent = '⏸';
-            scrollRaf = requestAnimationFrame(autoScrollStep);
-          } else {
-            scrollBtn.classList.remove('active');
-            scrollBtn.textContent = '▶';
-            cancelAnimationFrame(scrollRaf);
-          }
-        });
-
-        // Stop auto-scroll when user scrolls manually
-        window.addEventListener('wheel', function() {
-          if (autoScrolling) {
-            autoScrolling = false;
-            scrollBtn.classList.remove('active');
-            scrollBtn.textContent = '▶';
-            cancelAnimationFrame(scrollRaf);
-          }
-        }, { passive: true });
-        window.addEventListener('touchstart', function() {
-          if (autoScrolling) {
-            autoScrolling = false;
-            scrollBtn.classList.remove('active');
-            scrollBtn.textContent = '▶';
-            cancelAnimationFrame(scrollRaf);
-          }
-        }, { passive: true });
+        initListeners(); // adds listeners only on first login
+        startScroll();
       } else {
         errEl.textContent = 'Benutzername oder Passwort falsch.';
         document.getElementById('login-pass').value = '';
