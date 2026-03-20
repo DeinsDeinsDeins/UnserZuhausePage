@@ -655,9 +655,11 @@
 
     function autoScrollStep() {
       if (!autoScrolling) return;
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (window.scrollY >= maxScroll) { stopScroll(); return; }
-      window.scrollBy(0, scrollSpeed);
+      if (scrollTop >= maxScroll) { stopScroll(); return; }
+      document.documentElement.scrollTop += scrollSpeed;
+      document.body.scrollTop += scrollSpeed; // Safari fallback
       scrollRaf = requestAnimationFrame(autoScrollStep);
     }
 
@@ -696,7 +698,8 @@
 
         // reset everything before restarting
         stopScroll();
-        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
         music.currentTime = 0;
         music.volume = 0.4;
         music.muted = false;
