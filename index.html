@@ -378,16 +378,39 @@
       transition: border-color 0.2s, background 0.2s;
     }
     #mute-btn:hover { background: rgba(201,169,110,0.2); border-color: var(--gold); }
+
+    /* ── AUTO-SCROLL BUTTON ── */
+    #scroll-btn {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 4.4rem;
+      z-index: 10;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.45);
+      background: rgba(85,68,50,0.75);
+      backdrop-filter: blur(6px);
+      color: var(--gold);
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    #scroll-btn:hover { background: rgba(201,169,110,0.2); border-color: var(--gold); }
+    #scroll-btn.active { background: rgba(201,169,110,0.25); border-color: var(--gold); }
   </style>
 </head>
 <body>
 
 <!-- Background music -->
-<audio id="bg-music" loop preload="auto">
+<audio id="bg-music" preload="auto">
   <source src="Biljana/Dominic Fike - white keys.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Mute toggle -->
+<button id="scroll-btn" title="Auto-Scroll">▶</button>
 <button id="mute-btn" title="Musik an/aus">♪</button>
 
 <!-- Login overlay -->
@@ -613,8 +636,10 @@
       if (u === CORRECT_USERNAME && p === CORRECT_PASSWORD) {
         overlay.classList.add('hidden');
         setTimeout(function() { overlay.style.display = 'none'; }, 900);
+        window.scrollTo(0, 0);
         var music = document.getElementById('bg-music');
         var muteBtn = document.getElementById('mute-btn');
+        music.currentTime = 0;
         music.volume = 0.4;
         music.play();
         muteBtn.style.display = 'flex';
@@ -623,6 +648,61 @@
           muteBtn.textContent = music.muted ? '♪̶' : '♪';
           muteBtn.style.opacity = music.muted ? '0.4' : '1';
         });
+
+        // ── AUTO-SCROLL ──
+        var scrollBtn = document.getElementById('scroll-btn');
+        scrollBtn.style.display = 'flex';
+        var autoScrolling = true;
+        var scrollSpeed = 0.35; // px per frame — slow & cinematic
+        var scrollRaf;
+
+        scrollBtn.classList.add('active');
+        scrollBtn.textContent = '⏸';
+        scrollRaf = requestAnimationFrame(autoScrollStep);
+
+        function autoScrollStep() {
+          if (!autoScrolling) return;
+          var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+          if (window.scrollY >= maxScroll) {
+            autoScrolling = false;
+            scrollBtn.classList.remove('active');
+            scrollBtn.textContent = '▶';
+            return;
+          }
+          window.scrollBy(0, scrollSpeed);
+          scrollRaf = requestAnimationFrame(autoScrollStep);
+        }
+
+        scrollBtn.addEventListener('click', function() {
+          autoScrolling = !autoScrolling;
+          if (autoScrolling) {
+            scrollBtn.classList.add('active');
+            scrollBtn.textContent = '⏸';
+            scrollRaf = requestAnimationFrame(autoScrollStep);
+          } else {
+            scrollBtn.classList.remove('active');
+            scrollBtn.textContent = '▶';
+            cancelAnimationFrame(scrollRaf);
+          }
+        });
+
+        // Stop auto-scroll when user scrolls manually
+        window.addEventListener('wheel', function() {
+          if (autoScrolling) {
+            autoScrolling = false;
+            scrollBtn.classList.remove('active');
+            scrollBtn.textContent = '▶';
+            cancelAnimationFrame(scrollRaf);
+          }
+        }, { passive: true });
+        window.addEventListener('touchstart', function() {
+          if (autoScrolling) {
+            autoScrolling = false;
+            scrollBtn.classList.remove('active');
+            scrollBtn.textContent = '▶';
+            cancelAnimationFrame(scrollRaf);
+          }
+        }, { passive: true });
       } else {
         errEl.textContent = 'Benutzername oder Passwort falsch.';
         document.getElementById('login-pass').value = '';
