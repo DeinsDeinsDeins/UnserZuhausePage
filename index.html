@@ -275,6 +275,55 @@
       opacity: 0.7;
     }
 
+    /* ── FUTURE / TRAVEL PANELS ── */
+    .future-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 0 50px rgba(201,169,110,0.2);
+    }
+    .future-title em { color: var(--gold); font-style: normal; }
+    .future-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      color: rgba(240,236,228,0.65);
+      line-height: 1.9;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+    .destination-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+    }
+    .destination-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.9;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+      margin-top: 1.5rem;
+    }
+    .destination-quote em { color: var(--gold); font-style: normal; }
+    .future-sub em { color: var(--gold); font-style: normal; }
+    .world-final-closing {
+      margin-top: 2.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1.4;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 0 50px rgba(201,169,110,0.25);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 760px) {
       .ghost-year { font-size: clamp(3rem, 18vw, 7rem) !important; }
@@ -407,6 +456,11 @@
 <!-- Background music -->
 <audio id="bg-music" preload="auto">
   <source src="Biljana/Dominic Fike - white keys.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Travel section music — replace src with the new song file -->
+<audio id="travel-music" preload="auto">
+  <source src="Biljana/Declan McKenna - Brazil (Official Audio).mp3" type="audio/mpeg">
 </audio>
 
 <!-- Mute toggle -->
@@ -614,6 +668,89 @@
     </div>
   </div>
 
+
+  <!-- YES — PIVOTAL TRANSITION -->
+  <div class="panel p-center" id="p-yes">
+    <div class="panel-inner" style="max-width:600px;">
+      <div class="eyebrow">Ein mögliches Morgen</div>
+      <h2 class="future-title">Und wenn du<br><em>Ja</em> sagst&hellip;</h2>
+      <p class="future-sub">
+        Dann steigen wir ein.<br>
+        Zwei Strichmenschen.<br>
+        Ein Flugzeug. Die ganze Welt.
+      </p>
+      <div class="hero-line"></div>
+    </div>
+  </div>
+
+  <!-- ASIA -->
+  <div class="panel p-left-top" id="p-asia">
+    <div class="panel-inner">
+      <div class="destination-eyebrow">&#9992; Asien</div>
+      <div class="ghost-year" style="font-size:clamp(3rem,8vw,7rem);">Asia</div>
+      <p class="destination-quote">
+        &bdquo;Bali bei Sonnenaufgang.<br>
+        Kyoto im Kirschbl&uuml;tenregen.<br>
+        Tempel. Reisterrassen.<br>
+        Und dein <em>Lachen</em> &mdash; &uuml;berall.&ldquo;
+      </p>
+    </div>
+  </div>
+
+  <!-- AFRICA -->
+  <div class="panel p-right-bottom" id="p-africa">
+    <div class="panel-inner" style="max-width:480px;">
+      <div class="destination-eyebrow" style="justify-content:flex-end;">&#9992; Afrika</div>
+      <div class="ghost-year" style="font-size:clamp(3rem,8vw,7rem); text-align:right;">Afrika</div>
+      <p class="destination-quote" style="text-align:right;">
+        &bdquo;Marrakesch. Die Sahara.<br>
+        Wenn der Horizont kein Ende hat &mdash;<br>
+        bist du trotzdem der weiteste Ort,<br>
+        den ich je bereist habe.&ldquo;
+      </p>
+    </div>
+  </div>
+
+  <!-- SOUTH AMERICA -->
+  <div class="panel p-left-top" id="p-latam">
+    <div class="panel-inner">
+      <div class="destination-eyebrow">&#9992; S&uuml;damerika</div>
+      <div class="ghost-year" style="font-size:clamp(3rem,8vw,7rem);">Sur</div>
+      <p class="destination-quote">
+        &bdquo;Machu Picchu &uuml;ber den Wolken.<br>
+        Rio. Der Amazonas.<br>
+        Jeder Ort ein neues Kapitel &mdash;<br>
+        alle mit <em>dir</em>.&ldquo;
+      </p>
+    </div>
+  </div>
+
+  <!-- BIKINI BOTTOM -->
+  <div class="panel p-center" id="p-bikini">
+    <div class="panel-inner" style="max-width:580px;">
+      <div class="eyebrow">Ein kleiner Umweg</div>
+      <h2 class="future-title" style="font-size:clamp(2.5rem,7vw,5rem);">Bikini&nbsp;Bottom</h2>
+      <p class="future-sub">
+        Weil wir zwei sowieso<br>
+        &uuml;berall hinpassen &mdash;<br>
+        auch unten im Meer.
+      </p>
+    </div>
+  </div>
+
+  <!-- WORLD FINAL -->
+  <div class="panel p-center" id="p-world-end">
+    <div class="panel-inner" style="max-width:650px;">
+      <h2 class="final-title" style="font-size:clamp(2.5rem,7vw,5.5rem); line-height:1.25;">
+        &Uuml;berall auf der Welt<br>gibt es ein Zuhause &mdash;
+      </h2>
+      <p class="future-sub">solange du dabei bist.</p>
+      <div class="rule"></div>
+      <div class="world-final-closing">&bdquo;Also: Was sagst du?&ldquo;</div>
+      <div class="final-sig" style="margin-top:1.2rem;">&mdash; Dein Stalker &#9825;</div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Scroll container -->
@@ -637,7 +774,7 @@
     var autoScrolling = false;
     var scrollRaf     = null;
     var initialized   = false;
-    var scrollSpeed   = 0.45;
+    var scrollSpeed   = 0.5;
     var scrollAccum   = 0;
 
     function stopScroll() {
@@ -759,6 +896,10 @@
     { z1: -375, z2: -488, wall: 0xC4A070, floor: 0x8a7a5e },  // Unser Nest
     { z1: -498, z2: -588, wall: 0xA68B60, floor: 0x7B6B4F },  // Geschichte
     { z1: -588, z2: -622, wall: 0x4a3828, floor: 0x2a1a10 },  // Wahrheit
+    { z1: -710, z2: -790, wall: 0xD4956A, floor: 0xA07050 },   // Asien
+    { z1: -802, z2: -882, wall: 0xC8A050, floor: 0x9A7838 },   // Afrika
+    { z1: -894, z2: -974, wall: 0x5A8060, floor: 0x3A5A38 },   // Südamerika
+    { z1: -986, z2: -1100, wall: 0x1a6870, floor: 0xBB9830 },  // Bikini Bottom
   ];
 
   // ═══════════════════════════════════════════════════════
@@ -862,12 +1003,18 @@
     ['p-truth',  -590,  -610,  true],
     ['p-promise',-608,  -625,  true],
     ['p-final',  -630,  -680,  true],
+    ['p-yes',    -683,  -710,  true],
+    ['p-asia',   -720,  -782,  false],
+    ['p-africa', -812,  -874,  false],
+    ['p-latam',  -904,  -966,  false],
+    ['p-bikini',  -998, -1085, false],
+    ['p-world-end', -1102, -1138, true],
   ];
 
   // ═══════════════════════════════════════════════════════
   // COMPUTED CONSTANTS
   // ═══════════════════════════════════════════════════════
-  var LAST_Z       = -680;
+  var LAST_Z       = -1138;
   var TOTAL_DEPTH  = Math.abs(LAST_Z) + CAM_START;
   var TOTAL_SCROLL = TOTAL_DEPTH * PX_PER_UNIT;
 
@@ -1057,7 +1204,7 @@
     var frameMat = new THREE.MeshBasicMaterial({ color: 0x8B7355 });
     var doorPostX = ROOM_HALF_W - 2;
     var doorBeamW = doorPostX * 2 + 0.3;
-    var doorZs = [-22, -220, -232, -365, -375, -488, -498, -588, -622];
+    var doorZs = [-22, -220, -232, -365, -375, -488, -498, -588, -622, -710, -790, -802, -882, -894, -974, -986, -1100];
     doorZs.forEach(function(dz) {
       // Left post
       scene.add(makeMesh(new THREE.BoxGeometry(0.3, ROOM_HEIGHT, 0.3), frameMat, -doorPostX, 1, dz));
@@ -1077,6 +1224,9 @@
       { z1: -220, z2: -232, wall: 0x7a6a50, floor: 0x5a4a38 },
       { z1: -365, z2: -375, wall: 0x7a6a50, floor: 0x5a4a38 },
       { z1: -488, z2: -498, wall: 0x7a6a50, floor: 0x5a4a38 },
+      { z1: -790, z2: -802, wall: 0x7a6a50, floor: 0x5a4a38 },
+      { z1: -882, z2: -894, wall: 0x7a6a50, floor: 0x5a4a38 },
+      { z1: -974, z2: -986, wall: 0x7a6a50, floor: 0x5a4a38 },
     ];
     hallGaps.forEach(function(h) {
       var len = Math.abs(h.z2 - h.z1);
@@ -1162,11 +1312,17 @@
     g1.rotation.x = -Math.PI / 2;
     scene.add(g1);
 
-    // Garden ground (exit)
-    var g2 = new THREE.Mesh(new THREE.PlaneGeometry(50, 60), grassMat.clone());
+    // Garden ground (exit — original + new extended section)
+    var g2 = new THREE.Mesh(new THREE.PlaneGeometry(50, 120), grassMat.clone());
     g2.position.set(0, FLOOR_Y, -650);
     g2.rotation.x = -Math.PI / 2;
     scene.add(g2);
+
+    // World-tour exit garden (after Bikini Bottom)
+    var g3 = new THREE.Mesh(new THREE.PlaneGeometry(50, 100), grassMat.clone());
+    g3.position.set(0, FLOOR_Y, -1122);
+    g3.rotation.x = -Math.PI / 2;
+    scene.add(g3);
 
     // ── SKY ──
     buildSky();
@@ -1504,6 +1660,12 @@
     var sky2 = new THREE.Mesh(new THREE.PlaneGeometry(100, 45), mat2);
     sky2.position.set(0, 10, -695);
     scene.add(sky2);
+
+    // Sky at world-tour exit
+    var mat3 = new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide });
+    var sky3 = new THREE.Mesh(new THREE.PlaneGeometry(100, 45), mat3);
+    sky3.position.set(0, 10, -1320);
+    scene.add(sky3);
   }
 
   // ═══════════════════════════════════════════════════════
@@ -1574,6 +1736,678 @@
       scene.add(makeMesh(new THREE.BoxGeometry(0.7, 0.06, 0.7), dw, cx, FLOOR_Y + 0.85, z));
       scene.add(makeMesh(new THREE.BoxGeometry(0.7, 0.9, 0.06), dw, cx, FLOOR_Y + 1.3, z + side * 0.32));
     });
+  }
+
+  // ═══════════════════════════════════════════════════════
+  // STICKMAN AIRPLANE — two figures (him + her) flying the world
+  // ═══════════════════════════════════════════════════════
+  var stickmanPlane = null;
+
+  function buildStickmanPlane() {
+    var c = document.createElement('canvas');
+    c.width = 640; c.height = 300;
+    var ctx = c.getContext('2d');
+
+    // ── Fuselage ──
+    ctx.fillStyle = '#EDE8DE';
+    ctx.beginPath();
+    ctx.ellipse(300, 175, 240, 68, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Nose cone
+    ctx.fillStyle = '#DEDAD0';
+    ctx.beginPath();
+    ctx.moveTo(525, 175);
+    ctx.bezierCurveTo(590, 160, 625, 175, 600, 182);
+    ctx.bezierCurveTo(625, 190, 590, 200, 525, 185);
+    ctx.closePath();
+    ctx.fill();
+
+    // Tail
+    ctx.fillStyle = '#DEDAD0';
+    ctx.beginPath();
+    ctx.moveTo(75, 158);
+    ctx.lineTo(48, 85);
+    ctx.lineTo(82, 105);
+    ctx.lineTo(82, 158);
+    ctx.closePath();
+    ctx.fill();
+
+    // Tail horizontal stabilizer
+    ctx.beginPath();
+    ctx.moveTo(75, 185);
+    ctx.lineTo(40, 215);
+    ctx.lineTo(75, 210);
+    ctx.closePath();
+    ctx.fill();
+
+    // Upper wing
+    ctx.fillStyle = '#E0DCD2';
+    ctx.beginPath();
+    ctx.moveTo(230, 148);
+    ctx.lineTo(210, 52);
+    ctx.lineTo(400, 72);
+    ctx.lineTo(400, 148);
+    ctx.closePath();
+    ctx.fill();
+
+    // Lower wing
+    ctx.beginPath();
+    ctx.moveTo(230, 202);
+    ctx.lineTo(215, 265);
+    ctx.lineTo(375, 248);
+    ctx.lineTo(375, 202);
+    ctx.closePath();
+    ctx.fill();
+
+    // ── Gold outline on fuselage ──
+    ctx.strokeStyle = '#c9a96e';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.ellipse(300, 175, 240, 68, 0, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // ── Windows (4 oval portholes) ──
+    [500, 440, 370, 300].forEach(function(wx) {
+      ctx.fillStyle = '#a0d8f8';
+      ctx.beginPath();
+      ctx.ellipse(wx, 170, 22, 28, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#c9a96e';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    });
+
+    // ─────────────────────────────────────────────────────
+    // STICKMAN 1: HIM (window at x=370, short dark hair) — BROWN SKIN
+    // ─────────────────────────────────────────────────────
+    var m = { x: 370, y: 138 };
+
+    // Head
+    ctx.fillStyle = '#8B5E3C';
+    ctx.beginPath(); ctx.arc(m.x, m.y, 17, 0, Math.PI * 2); ctx.fill();
+
+    // Short hair
+    ctx.fillStyle = '#2a1a0a';
+    ctx.beginPath(); ctx.arc(m.x, m.y - 5, 17, Math.PI, 0); ctx.fill();
+    ctx.fillRect(m.x - 17, m.y - 5, 34, 7);
+
+    // Eyes
+    ctx.fillStyle = '#1a1008';
+    ctx.beginPath(); ctx.arc(m.x - 6, m.y + 1, 2.5, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(m.x + 6, m.y + 1, 2.5, 0, Math.PI * 2); ctx.fill();
+
+    // Smile
+    ctx.strokeStyle = '#1a1008'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(m.x, m.y + 6, 6, 0, Math.PI); ctx.stroke();
+
+    // Body (stickman in window — just upper half visible)
+    ctx.strokeStyle = '#2a1a0a'; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(m.x, m.y + 17); ctx.lineTo(m.x, m.y + 34); ctx.stroke();
+
+    // Arms raised (happy / waving)
+    ctx.beginPath(); ctx.moveTo(m.x, m.y + 24); ctx.lineTo(m.x - 14, m.y + 14); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(m.x, m.y + 24); ctx.lineTo(m.x + 14, m.y + 14); ctx.stroke();
+
+    // ─────────────────────────────────────────────────────
+    // STICKMAN 2: HER (window at x=300, long dark hair)
+    // ─────────────────────────────────────────────────────
+    var f = { x: 300, y: 138 };
+
+    // Head
+    ctx.fillStyle = '#f0cfa0';
+    ctx.beginPath(); ctx.arc(f.x, f.y, 17, 0, Math.PI * 2); ctx.fill();
+
+    // Long hair (darker, flowing down sides)
+    ctx.fillStyle = '#4a2a10';
+    ctx.beginPath(); ctx.arc(f.x, f.y - 5, 17, Math.PI, 0); ctx.fill();
+    ctx.fillRect(f.x - 17, f.y - 5, 34, 7);
+    // Hair strands beside face
+    ctx.fillRect(f.x - 20, f.y - 5, 6, 38);
+    ctx.fillRect(f.x + 14, f.y - 5, 6, 35);
+
+    // Eyes
+    ctx.fillStyle = '#1a1008';
+    ctx.beginPath(); ctx.arc(f.x - 6, f.y + 1, 2.5, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(f.x + 6, f.y + 1, 2.5, 0, Math.PI * 2); ctx.fill();
+
+    // Smile
+    ctx.strokeStyle = '#1a1008'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(f.x, f.y + 6, 6, 0, Math.PI); ctx.stroke();
+
+    // Body
+    ctx.strokeStyle = '#4a2a10'; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(f.x, f.y + 17); ctx.lineTo(f.x, f.y + 34); ctx.stroke();
+
+    // Arms raised
+    ctx.beginPath(); ctx.moveTo(f.x, f.y + 24); ctx.lineTo(f.x - 14, f.y + 14); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(f.x, f.y + 24); ctx.lineTo(f.x + 14, f.y + 14); ctx.stroke();
+
+    // ── Heart between them ──
+    ctx.fillStyle = '#d4a5a0';
+    var hx = 335, hy = 130;
+    ctx.beginPath();
+    ctx.moveTo(hx, hy + 7);
+    ctx.bezierCurveTo(hx, hy, hx - 8, hy - 3, hx - 8, hy + 5);
+    ctx.bezierCurveTo(hx - 8, hy + 13, hx, hy + 18, hx, hy + 20);
+    ctx.bezierCurveTo(hx, hy + 18, hx + 8, hy + 13, hx + 8, hy + 5);
+    ctx.bezierCurveTo(hx + 8, hy - 3, hx, hy, hx, hy + 7);
+    ctx.fill();
+
+    // Small clouds above the plane
+    [[80, 38], [140, 25], [210, 42]].forEach(function(cp) {
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.beginPath(); ctx.arc(cp[0], cp[1], 14, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(cp[0] + 16, cp[1] + 4, 10, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(cp[0] - 12, cp[1] + 5, 9, 0, Math.PI * 2); ctx.fill();
+    });
+
+    var tex = new THREE.CanvasTexture(c);
+    var mat = new THREE.MeshBasicMaterial({
+      map: tex, transparent: true, side: THREE.DoubleSide, depthWrite: false
+    });
+    var mesh = new THREE.Mesh(new THREE.PlaneGeometry(15, 7.5), mat);
+    mesh.position.set(-2, 2.5, -742);
+    mesh.rotation.y = THREE.MathUtils.degToRad(12);
+    scene.add(mesh);
+    return mesh;
+  }
+
+  // ═══════════════════════════════════════════════════════
+  // BIKINI BOTTOM — canvas underwater cityscape on the back wall
+  // ═══════════════════════════════════════════════════════
+  function buildBikiniBottom() {
+    var c = document.createElement('canvas');
+    c.width = 640; c.height = 400;
+    var ctx = c.getContext('2d');
+
+    // ── Ocean background ──
+    var bg = ctx.createLinearGradient(0, 0, 0, 400);
+    bg.addColorStop(0, '#082838');
+    bg.addColorStop(0.65, '#1a6870');
+    bg.addColorStop(1, '#0f3840');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, 640, 400);
+
+    // ── Sandy floor ──
+    ctx.fillStyle = '#c8a840';
+    ctx.beginPath();
+    ctx.moveTo(0, 330);
+    for (var sx = 0; sx <= 640; sx += 20) {
+      ctx.lineTo(sx, 330 + Math.sin(sx * 0.08) * 5);
+    }
+    ctx.lineTo(640, 400); ctx.lineTo(0, 400); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#d8b850';
+    ctx.fillRect(0, 325, 640, 8);
+
+    // ── Bubbles ──
+    [[55,60],[130,95],[210,38],[355,75],[475,52],[585,105],[35,155],[425,130],[300,55]].forEach(function(b) {
+      ctx.strokeStyle = 'rgba(180,235,255,0.45)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(b[0], b[1], 6, 0, Math.PI * 2); ctx.stroke();
+    });
+
+    // ── Seaweed ──
+    [[18,330],[52,330],[580,330],[612,330]].forEach(function(sw, i) {
+      var h = 55 + i * 8;
+      ctx.strokeStyle = '#2a8840'; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(sw[0], sw[1]);
+      ctx.bezierCurveTo(sw[0]+12, sw[1]-h*0.35, sw[0]-12, sw[1]-h*0.7, sw[0]+6, sw[1]-h);
+      ctx.stroke();
+      ctx.fillStyle = '#38a050';
+      ctx.beginPath(); ctx.ellipse(sw[0]+13, sw[1]-h*0.4, 10, 5, 0.5, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(sw[0]-8, sw[1]-h*0.75, 8, 4, -0.4, 0, Math.PI * 2); ctx.fill();
+    });
+
+    // ══════════════════════════════════════════
+    // PINEAPPLE HOUSE (SpongeBob) — x≈120
+    // ══════════════════════════════════════════
+    // Body (yellow ellipse)
+    ctx.fillStyle = '#e8a820';
+    ctx.beginPath(); ctx.ellipse(118, 258, 44, 68, 0, 0, Math.PI * 2); ctx.fill();
+    // Diamond pattern (crossed diagonals)
+    ctx.strokeStyle = '#b07818'; ctx.lineWidth = 1.2;
+    for (var di = -3; di <= 3; di++) {
+      ctx.beginPath(); ctx.moveTo(118 + di*14 - 14, 190); ctx.lineTo(118 + di*14 + 14, 326); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(118 + di*14 + 14, 190); ctx.lineTo(118 + di*14 - 14, 326); ctx.stroke();
+    }
+    // Round-top door
+    ctx.fillStyle = '#6a3810';
+    ctx.beginPath(); ctx.arc(118, 294, 14, Math.PI, 0); ctx.fill();
+    ctx.fillRect(104, 294, 28, 36); ctx.fill();
+    // Door knob
+    ctx.fillStyle = '#c9a96e'; ctx.beginPath(); ctx.arc(128, 310, 3, 0, Math.PI * 2); ctx.fill();
+    // Windows
+    ctx.fillStyle = '#90e8f8';
+    ctx.fillRect(88, 238, 18, 18); ctx.fillRect(121, 238, 18, 18);
+    ctx.strokeStyle = '#6a3810'; ctx.lineWidth = 1.5;
+    ctx.strokeRect(88, 238, 18, 18); ctx.strokeRect(121, 238, 18, 18);
+    // Cross on windows
+    ctx.beginPath(); ctx.moveTo(97,238); ctx.lineTo(97,256); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(88,247); ctx.lineTo(106,247); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(130,238); ctx.lineTo(130,256); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(121,247); ctx.lineTo(139,247); ctx.stroke();
+    // Leaf crown (5 leaves pointing up)
+    ctx.fillStyle = '#2a9838';
+    [[-18,-22],[-8,-32],[0,-35],[8,-32],[18,-22]].forEach(function(lf) {
+      ctx.beginPath();
+      ctx.moveTo(118+lf[0]*0.5, 192+lf[1]+28);
+      ctx.lineTo(118+lf[0]-7, 192+lf[1]);
+      ctx.lineTo(118+lf[0]+7, 192+lf[1]);
+      ctx.closePath(); ctx.fill();
+    });
+
+    // ══════════════════════════════════════════
+    // PATRICK'S ROCK — x≈268
+    // ══════════════════════════════════════════
+    ctx.fillStyle = '#9a8a80';
+    ctx.beginPath(); ctx.ellipse(268, 312, 52, 28, 0, 0, Math.PI); ctx.fill();
+    // Star texture
+    ctx.strokeStyle = '#b8a898'; ctx.lineWidth = 2.5;
+    for (var sp = 0; sp < 5; sp++) {
+      var sa = (sp * Math.PI * 2 / 5) - Math.PI / 2;
+      ctx.beginPath(); ctx.moveTo(268, 302);
+      ctx.lineTo(268 + Math.cos(sa)*18, 302 + Math.sin(sa)*12); ctx.stroke();
+    }
+
+    // ══════════════════════════════════════════
+    // SQUIDWARD'S EASTER ISLAND HEAD — x≈405
+    // ══════════════════════════════════════════
+    ctx.fillStyle = '#8a9a7a';
+    ctx.beginPath(); ctx.ellipse(405, 275, 32, 55, 0, 0, Math.PI * 2); ctx.fill();
+    // Forehead bump
+    ctx.beginPath(); ctx.ellipse(405, 220, 18, 14, 0, 0, Math.PI * 2); ctx.fill();
+    // Long nose
+    ctx.fillStyle = '#7a8a6a';
+    ctx.beginPath(); ctx.moveTo(394,270); ctx.lineTo(438,272); ctx.lineTo(395,282); ctx.closePath(); ctx.fill();
+    // Eyes (dark rectangular)
+    ctx.fillStyle = '#3a4a2a';
+    ctx.fillRect(393, 253, 12, 9); ctx.fillRect(411, 253, 12, 9);
+    // Frown mouth
+    ctx.strokeStyle = '#3a4a2a'; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(405, 296, 9, 0, Math.PI); ctx.stroke();
+    // Pedestal
+    ctx.fillStyle = '#7a8a6a'; ctx.fillRect(383, 322, 44, 10);
+
+    // ══════════════════════════════════════════
+    // KRUSTY KRAB — x≈560
+    // ══════════════════════════════════════════
+    // Main building (crab-trap shape)
+    ctx.fillStyle = '#b84010';
+    ctx.fillRect(508, 270, 115, 60);
+    ctx.fillStyle = '#c85020';
+    ctx.fillRect(520, 252, 90, 22);
+    // Anchor-shaped smokestack
+    ctx.fillStyle = '#9a3010'; ctx.fillRect(590, 218, 14, 54);
+    ctx.beginPath(); ctx.arc(597, 218, 7, Math.PI, 0); ctx.fill();
+    // Sign
+    ctx.fillStyle = '#e8c840'; ctx.fillRect(526, 245, 72, 10);
+    ctx.fillStyle = '#3a1808'; ctx.font = 'bold 6.5px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('KRUSTY KRAB', 562, 253); ctx.textAlign = 'left';
+    // Windows
+    ctx.fillStyle = '#90e8f8';
+    ctx.fillRect(514, 278, 24, 18); ctx.fillRect(546, 278, 24, 18);
+    ctx.strokeStyle = '#9a3010'; ctx.lineWidth = 1.5;
+    ctx.strokeRect(514, 278, 24, 18); ctx.strokeRect(546, 278, 24, 18);
+    // Door
+    ctx.fillStyle = '#5a1808'; ctx.fillRect(576, 285, 20, 45);
+    ctx.beginPath(); ctx.arc(586, 285, 10, Math.PI, 0); ctx.fill();
+
+    // ══════════════════════════════════════════
+    // JELLYFISH (3 floating)
+    // ══════════════════════════════════════════
+    function drawJelly(jx, jy, col) {
+      ctx.fillStyle = col;
+      ctx.beginPath(); ctx.ellipse(jx, jy, 20, 13, 0, 0, Math.PI); ctx.fill();
+      // Gloss spot
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.beginPath(); ctx.arc(jx-6, jy-4, 4, 0, Math.PI * 2); ctx.fill();
+      // Tentacles
+      ctx.strokeStyle = col; ctx.lineWidth = 1.8;
+      for (var t = -2; t <= 2; t++) {
+        ctx.beginPath(); ctx.moveTo(jx + t*6, jy);
+        ctx.bezierCurveTo(jx+t*6+6, jy+9, jx+t*6-6, jy+18, jx+t*6+4, jy+28); ctx.stroke();
+      }
+    }
+    drawJelly(330, 128, 'rgba(255,175,215,0.78)');
+    drawJelly(472, 88, 'rgba(175,215,255,0.78)');
+    drawJelly(200, 168, 'rgba(215,195,255,0.72)');
+
+    // ── "Wir waren auch hier" label ──
+    ctx.fillStyle = 'rgba(201,169,110,0.7)';
+    ctx.font = 'italic 11px Georgia, serif';
+    ctx.textAlign = 'right'; ctx.fillText('★ wir waren auch hier', 628, 380); ctx.textAlign = 'left';
+
+    var tex = new THREE.CanvasTexture(c);
+    var mat = new THREE.MeshBasicMaterial({
+      map: tex, transparent: true, side: THREE.DoubleSide, depthWrite: false
+    });
+    var panel = new THREE.Mesh(new THREE.PlaneGeometry(11, 6.9), mat);
+    panel.position.set(0, FLOOR_Y + 4.2, -1046);
+    scene.add(panel);
+
+    // ── Bubble particles in the room ──
+    (function() {
+      var bc = document.createElement('canvas');
+      bc.width = bc.height = 32;
+      var bctx = bc.getContext('2d');
+      bctx.strokeStyle = 'rgba(200,240,255,0.65)';
+      bctx.lineWidth = 1.5;
+      bctx.beginPath(); bctx.arc(16, 16, 10, 0, Math.PI * 2); bctx.stroke();
+      var btex = new THREE.CanvasTexture(bc);
+      var count = 120;
+      var bgeo = new THREE.BufferGeometry();
+      var bpos = new Float32Array(count * 3);
+      for (var bi = 0; bi < count; bi++) {
+        bpos[bi*3]   = (Math.random() - 0.5) * 16;
+        bpos[bi*3+1] = (Math.random() - 0.5) * 8;
+        bpos[bi*3+2] = -986 - Math.random() * 114;
+      }
+      bgeo.setAttribute('position', new THREE.BufferAttribute(bpos, 3));
+      scene.add(new THREE.Points(bgeo, new THREE.PointsMaterial({
+        map: btex, size: 0.22, transparent: true, depthWrite: false,
+        blending: THREE.AdditiveBlending, sizeAttenuation: true
+      })));
+    })();
+  }
+
+  // ═══════════════════════════════════════════════════════
+  // WORLD DECOR — landmark silhouettes in travel rooms
+  // ═══════════════════════════════════════════════════════
+  function buildWorldDecor() {
+
+    // ── ASIA: Pagoda silhouette ──
+    (function() {
+      var c = document.createElement('canvas');
+      c.width = 256; c.height = 384;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = 'rgba(201,169,110,0.55)';
+      // 5-tier pagoda
+      var tiers = [[128,320,80,18],[128,285,64,18],[128,250,50,18],[128,218,38,16],[128,188,28,14]];
+      tiers.forEach(function(t) {
+        // Roof (wide triangle)
+        ctx.beginPath();
+        ctx.moveTo(t[0]-t[2], t[1]);
+        ctx.lineTo(t[0]+t[2], t[1]);
+        ctx.lineTo(t[0]+t[2]-10, t[1]-t[3]);
+        ctx.lineTo(t[0]-t[2]+10, t[1]-t[3]);
+        ctx.closePath(); ctx.fill();
+        // Slight upturned corners
+        ctx.beginPath();
+        ctx.moveTo(t[0]-t[2], t[1]);
+        ctx.lineTo(t[0]-t[2]-6, t[1]+5);
+        ctx.lineTo(t[0]-t[2]+6, t[1]);
+        ctx.closePath(); ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(t[0]+t[2], t[1]);
+        ctx.lineTo(t[0]+t[2]+6, t[1]+5);
+        ctx.lineTo(t[0]+t[2]-6, t[1]);
+        ctx.closePath(); ctx.fill();
+        // Wall between tiers
+        ctx.fillRect(t[0]-t[2]+14, t[1], (t[2]-14)*2, t[3]+2);
+      });
+      // Spire
+      ctx.beginPath();
+      ctx.moveTo(128, 120);
+      ctx.lineTo(122, 190);
+      ctx.lineTo(134, 190);
+      ctx.closePath(); ctx.fill();
+      // Base
+      ctx.fillRect(88, 320, 80, 20);
+      var tex = new THREE.CanvasTexture(c);
+      var mat = new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var m = new THREE.Mesh(new THREE.PlaneGeometry(4, 6), mat);
+      m.position.set(-7.5, FLOOR_Y + 3.5, -790);
+      scene.add(m);
+    })();
+
+    // ── AFRICA: Pyramid silhouette ──
+    (function() {
+      var c = document.createElement('canvas');
+      c.width = 256; c.height = 256;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = 'rgba(201,169,110,0.55)';
+      // Big pyramid
+      ctx.beginPath();
+      ctx.moveTo(128, 40);
+      ctx.lineTo(240, 220);
+      ctx.lineTo(16, 220);
+      ctx.closePath(); ctx.fill();
+      // Smaller pyramid behind
+      ctx.fillStyle = 'rgba(201,169,110,0.35)';
+      ctx.beginPath();
+      ctx.moveTo(200, 80);
+      ctx.lineTo(256, 220);
+      ctx.lineTo(148, 220);
+      ctx.closePath(); ctx.fill();
+      // Sphinx silhouette (simple)
+      ctx.fillStyle = 'rgba(201,169,110,0.45)';
+      ctx.fillRect(28, 205, 60, 16);
+      ctx.beginPath(); ctx.arc(58, 205, 11, Math.PI, 0); ctx.fill();
+      ctx.fillRect(50, 194, 16, 12);
+      var tex = new THREE.CanvasTexture(c);
+      var mat = new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var m = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), mat);
+      m.position.set(7.5, FLOOR_Y + 3, -848);
+      scene.add(m);
+    })();
+
+    // ── SOUTH AMERICA: Mountain / Machu Picchu silhouette ──
+    (function() {
+      var c = document.createElement('canvas');
+      c.width = 320; c.height = 256;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = 'rgba(201,169,110,0.50)';
+      // Mountain ranges
+      ctx.beginPath();
+      ctx.moveTo(0, 220);
+      ctx.lineTo(60, 80);
+      ctx.lineTo(130, 150);
+      ctx.lineTo(180, 50);
+      ctx.lineTo(250, 130);
+      ctx.lineTo(320, 60);
+      ctx.lineTo(320, 220);
+      ctx.closePath(); ctx.fill();
+      // Terraces (Machu Picchu style)
+      ctx.fillStyle = 'rgba(201,169,110,0.70)';
+      [190, 202, 214, 226].forEach(function(ty, i) {
+        ctx.fillRect(135 + i*2, ty, 80 - i*4, 8);
+      });
+      // Small structure on top
+      ctx.fillRect(155, 182, 40, 10);
+      ctx.beginPath();
+      ctx.moveTo(155, 182); ctx.lineTo(175, 166); ctx.lineTo(195, 182);
+      ctx.closePath(); ctx.fill();
+      // Clouds
+      ctx.fillStyle = 'rgba(255,255,255,0.4)';
+      [[50,55],[130,35],[260,45]].forEach(function(cp) {
+        ctx.beginPath(); ctx.arc(cp[0], cp[1], 20, 0, Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(cp[0]+22, cp[1]+5, 15, 0, Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(cp[0]-18, cp[1]+7, 12, 0, Math.PI*2); ctx.fill();
+      });
+      var tex = new THREE.CanvasTexture(c);
+      var mat = new THREE.MeshBasicMaterial({map:tex,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var m = new THREE.Mesh(new THREE.PlaneGeometry(6, 4.8), mat);
+      m.position.set(-7.5, FLOOR_Y + 3, -940);
+      scene.add(m);
+    })();
+
+    // ── ASIA: Stickman — foto-chaos in Kyoto ──
+    (function(){
+      var c=document.createElement('canvas'); c.width=560; c.height=320;
+      var ctx=c.getContext('2d');
+      var sky=ctx.createLinearGradient(0,0,0,320); sky.addColorStop(0,'rgba(160,80,60,0.7)'); sky.addColorStop(1,'rgba(80,40,30,0.12)');
+      ctx.fillStyle=sky; ctx.fillRect(0,0,560,320);
+      ctx.strokeStyle='rgba(201,169,110,0.35)'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(0,268); ctx.lineTo(560,268); ctx.stroke();
+      ctx.strokeStyle='#5a3a20'; ctx.lineWidth=6; ctx.beginPath(); ctx.moveTo(98,268); ctx.lineTo(93,168); ctx.stroke();
+      ctx.lineWidth=3.5; ctx.beginPath(); ctx.moveTo(93,193); ctx.lineTo(70,155); ctx.stroke(); ctx.beginPath(); ctx.moveTo(93,178); ctx.lineTo(120,146); ctx.stroke();
+      [[76,140],[100,126],[120,138],[86,118],[108,110],[60,150]].forEach(function(p){ctx.fillStyle='rgba(215,140,155,0.75)';ctx.beginPath();ctx.arc(p[0],p[1],19,0,Math.PI*2);ctx.fill();});
+      [[205,78],[268,48],[345,88],[425,58],[490,82],[158,108]].forEach(function(p){ctx.fillStyle='rgba(215,140,155,0.52)';ctx.beginPath();ctx.arc(p[0],p[1],7,0,Math.PI*2);ctx.fill();});
+      // HER posing
+      var f={x:210,y:183};
+      ctx.fillStyle='#f0cfa0'; ctx.beginPath(); ctx.arc(f.x,f.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#4a2a10'; ctx.beginPath(); ctx.arc(f.x,f.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(f.x-17,f.y-5,34,7); ctx.fillRect(f.x-21,f.y-5,6,38); ctx.fillRect(f.x+15,f.y-5,6,35);
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(f.x-6,f.y+2,2.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(f.x+6,f.y+2,2.5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2.2; ctx.beginPath(); ctx.arc(f.x,f.y+7,6,0,Math.PI); ctx.stroke();
+      ctx.strokeStyle='#4a2a10'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(f.x,f.y+17); ctx.lineTo(f.x,f.y+50); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f.x,f.y+50); ctx.lineTo(f.x-11,f.y+76); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f.x,f.y+50); ctx.lineTo(f.x+11,f.y+76); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(f.x,f.y+30); ctx.lineTo(f.x-18,f.y+42); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f.x,f.y+30); ctx.lineTo(f.x+20,f.y+18); ctx.stroke();
+      // HIM with camera, squinting
+      var m2={x:368,y:181};
+      ctx.fillStyle='#8B5E3C'; ctx.beginPath(); ctx.arc(m2.x,m2.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.arc(m2.x,m2.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(m2.x-17,m2.y-5,34,7);
+      ctx.fillStyle='#1a1008'; ctx.fillRect(m2.x-9,m2.y+1,6,2.5); ctx.fillRect(m2.x+3,m2.y+1,6,2.5);
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=1.8; ctx.beginPath(); ctx.moveTo(m2.x-4,m2.y+10); ctx.lineTo(m2.x+4,m2.y+10); ctx.stroke();
+      ctx.fillStyle='#1e1208'; ctx.fillRect(m2.x+11,m2.y-10,26,16);
+      ctx.fillStyle='#a0d8f8'; ctx.beginPath(); ctx.arc(m2.x+25,m2.y-2,5.5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#c9a96e'; ctx.lineWidth=1.5; ctx.strokeRect(m2.x+11,m2.y-10,26,16);
+      ctx.strokeStyle='#2a1a0a'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(m2.x,m2.y+17); ctx.lineTo(m2.x+6,m2.y+50); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m2.x+6,m2.y+50); ctx.lineTo(m2.x-6,m2.y+76); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m2.x+6,m2.y+50); ctx.lineTo(m2.x+18,m2.y+76); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(m2.x,m2.y+30); ctx.lineTo(m2.x+14,m2.y+17); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m2.x,m2.y+30); ctx.lineTo(m2.x-12,m2.y+40); ctx.stroke();
+      // Carp peeking
+      ctx.fillStyle='rgba(240,150,80,0.72)'; ctx.beginPath(); ctx.ellipse(290,292,28,12,0,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(318,287); ctx.lineTo(332,280); ctx.lineTo(332,294); ctx.closePath(); ctx.fill();
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(283,290,2.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(201,169,110,0.9)'; ctx.font='italic 15px Georgia,serif'; ctx.fillText('\u201e5. Versuch.\u201c',298,32);
+      var sT=new THREE.CanvasTexture(c);
+      var sM=new THREE.MeshBasicMaterial({map:sT,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var sMsh=new THREE.Mesh(new THREE.PlaneGeometry(7.2,4.1),sM);
+      sMsh.position.set(4,FLOOR_Y+2.8,-756); scene.add(sMsh);
+    })();
+
+    // ── AFRICA: Stickman — Kamel-Chaos ──
+    (function(){
+      var c=document.createElement('canvas'); c.width=560; c.height=320;
+      var ctx=c.getContext('2d');
+      var bg=ctx.createLinearGradient(0,0,0,320); bg.addColorStop(0,'rgba(200,138,55,0.68)'); bg.addColorStop(1,'rgba(155,95,35,0.2)');
+      ctx.fillStyle=bg; ctx.fillRect(0,0,560,320);
+      ctx.fillStyle='rgba(240,198,72,0.55)'; ctx.beginPath(); ctx.arc(482,55,32,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(201,169,110,0.28)'; ctx.beginPath(); ctx.moveTo(0,270); ctx.bezierCurveTo(110,235,215,252,290,242); ctx.bezierCurveTo(360,232,455,256,560,246); ctx.lineTo(560,320); ctx.lineTo(0,320); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle='rgba(201,169,110,0.38)'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(0,268); ctx.lineTo(560,268); ctx.stroke();
+      // Kamel
+      ctx.fillStyle='rgba(188,138,65,0.8)';
+      ctx.beginPath(); ctx.ellipse(318,218,70,42,0,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(328,174,28,24,-0.1,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(356,182); ctx.lineTo(374,150); ctx.lineTo(390,154); ctx.lineTo(374,187); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(390,142,22,16,0.2,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(408,146,12,9,0.3,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(386,137,3,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='rgba(165,118,50,0.9)'; ctx.lineWidth=5;
+      [[278,258,268,268],[300,258,291,268],[340,258,332,268],[360,258,352,268]].forEach(function(l){ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
+      // HIM auf Kamel, alarmiert
+      var m3={x:323,y:140};
+      ctx.fillStyle='#8B5E3C'; ctx.beginPath(); ctx.arc(m3.x,m3.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.arc(m3.x,m3.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(m3.x-17,m3.y-5,34,7);
+      ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(m3.x-6,m3.y+2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(m3.x+6,m3.y+2,5.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(m3.x-6,m3.y+2,2.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(m3.x+6,m3.y+2,2.5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(m3.x,m3.y+9,5.5,0,Math.PI*2); ctx.stroke();
+      ctx.strokeStyle='#2a1a0a'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(m3.x,m3.y+17); ctx.lineTo(m3.x,m3.y+38); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(m3.x,m3.y+26); ctx.lineTo(m3.x-24,m3.y+10); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m3.x,m3.y+26); ctx.lineTo(m3.x+24,m3.y+8); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(m3.x,m3.y+38); ctx.lineTo(m3.x-14,m3.y+56); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m3.x,m3.y+38); ctx.lineTo(m3.x+14,m3.y+54); ctx.stroke();
+      // HER lachend mit Handy
+      var f2={x:113,y:206};
+      ctx.fillStyle='#f0cfa0'; ctx.beginPath(); ctx.arc(f2.x,f2.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#4a2a10'; ctx.beginPath(); ctx.arc(f2.x,f2.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(f2.x-17,f2.y-5,34,7); ctx.fillRect(f2.x-21,f2.y-5,6,38); ctx.fillRect(f2.x+15,f2.y-5,6,35);
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(f2.x-6,f2.y+2,2.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(f2.x+6,f2.y+2,2.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#8B3030'; ctx.beginPath(); ctx.arc(f2.x,f2.y+8,8,0,Math.PI); ctx.fill();
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(f2.x,f2.y+8,8,0,Math.PI); ctx.stroke();
+      ctx.strokeStyle='#4a2a10'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(f2.x,f2.y+17); ctx.lineTo(f2.x,f2.y+50); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f2.x,f2.y+50); ctx.lineTo(f2.x-11,f2.y+76); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f2.x,f2.y+50); ctx.lineTo(f2.x+11,f2.y+76); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(f2.x,f2.y+30); ctx.lineTo(f2.x-15,f2.y+46); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f2.x,f2.y+30); ctx.lineTo(f2.x+20,f2.y+14); ctx.stroke();
+      ctx.fillStyle='#1e1208'; ctx.fillRect(f2.x+19,f2.y+5,10,17); ctx.fillStyle='#a0d8f8'; ctx.fillRect(f2.x+20,f2.y+7,8,9);
+      ctx.fillStyle='rgba(201,169,110,0.95)'; ctx.font='bold 22px sans-serif'; ctx.fillText('!',m3.x-42,m3.y-14); ctx.fillText('!',m3.x+30,m3.y-20);
+      ctx.font='italic 14px Georgia,serif'; ctx.fillText('\u201eNiemand hat geholfen.\u201c',28,30);
+      var sT2=new THREE.CanvasTexture(c);
+      var sM2=new THREE.MeshBasicMaterial({map:sT2,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var sMsh2=new THREE.Mesh(new THREE.PlaneGeometry(7.2,4.1),sM2);
+      sMsh2.position.set(-4,FLOOR_Y+2.8,-840); scene.add(sMsh2);
+    })();
+
+    // ── SOUTH AMERICA: Stickman — Erschöpft auf der Treppe ──
+    (function(){
+      var c=document.createElement('canvas'); c.width=560; c.height=320;
+      var ctx=c.getContext('2d');
+      var bg=ctx.createLinearGradient(0,0,0,320); bg.addColorStop(0,'rgba(58,78,118,0.65)'); bg.addColorStop(1,'rgba(78,98,78,0.18)');
+      ctx.fillStyle=bg; ctx.fillRect(0,0,560,320);
+      ctx.fillStyle='rgba(95,115,95,0.38)'; ctx.beginPath(); ctx.moveTo(0,220); ctx.lineTo(118,80); ctx.lineTo(228,158); ctx.lineTo(318,58); ctx.lineTo(420,138); ctx.lineTo(560,68); ctx.lineTo(560,320); ctx.lineTo(0,320); ctx.closePath(); ctx.fill();
+      [[78,48],[198,33],[382,43],[502,58]].forEach(function(cp){ctx.fillStyle='rgba(215,222,238,0.32)';ctx.beginPath();ctx.arc(cp[0],cp[1],26,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cp[0]+28,cp[1]+8,18,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cp[0]-20,cp[1]+10,15,0,Math.PI*2);ctx.fill();});
+      for(var si=0;si<5;si++){var sx=88+si*76,sy=235-si*22,sw=88,sh=24;ctx.fillStyle='rgba(178,158,98,0.62)';ctx.fillRect(sx,sy,sw,sh);ctx.fillStyle='rgba(155,135,78,0.52)';ctx.fillRect(sx,sy+sh,sw,8);}
+      // HIM erschöpft mit sterbendem Akku
+      var m4={x:255,y:192};
+      ctx.fillStyle='#8B5E3C'; ctx.beginPath(); ctx.arc(m4.x,m4.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.arc(m4.x,m4.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(m4.x-17,m4.y-5,34,7);
+      ctx.fillStyle='#1a1008'; ctx.fillRect(m4.x-9,m4.y+1,7,2.5); ctx.fillRect(m4.x+2,m4.y+1,7,2.5);
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m4.x-5,m4.y+9); ctx.bezierCurveTo(m4.x-2,m4.y+13,m4.x+2,m4.y+7,m4.x+5,m4.y+11); ctx.stroke();
+      ctx.strokeStyle='#2a1a0a'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(m4.x,m4.y+17); ctx.lineTo(m4.x+7,m4.y+48); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m4.x+7,m4.y+48); ctx.lineTo(m4.x-4,m4.y+72); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m4.x+7,m4.y+48); ctx.lineTo(m4.x+26,m4.y+70); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(m4.x,m4.y+30); ctx.lineTo(m4.x-15,m4.y+46); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m4.x,m4.y+30); ctx.lineTo(m4.x+20,m4.y+44); ctx.stroke();
+      ctx.fillStyle='#1e1208'; ctx.fillRect(m4.x+18,m4.y+38,11,18); ctx.fillStyle='rgba(220,50,50,0.85)'; ctx.fillRect(m4.x+19,m4.y+40,3,10);
+      ctx.fillStyle='rgba(201,169,110,0.9)'; ctx.font='bold 20px sans-serif'; ctx.fillText('\u26a1',m4.x+26,m4.y+32);
+      // HER lacht sich tot
+      var f3={x:372,y:178};
+      ctx.fillStyle='#f0cfa0'; ctx.beginPath(); ctx.arc(f3.x,f3.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#4a2a10'; ctx.beginPath(); ctx.arc(f3.x,f3.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(f3.x-17,f3.y-5,34,7); ctx.fillRect(f3.x-21,f3.y-5,6,38); ctx.fillRect(f3.x+15,f3.y-5,6,35);
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2.2; ctx.beginPath(); ctx.arc(f3.x-6,f3.y+1,4,Math.PI,0); ctx.stroke(); ctx.beginPath(); ctx.arc(f3.x+6,f3.y+1,4,Math.PI,0); ctx.stroke();
+      ctx.fillStyle='#8B3030'; ctx.beginPath(); ctx.arc(f3.x,f3.y+9,9,0,Math.PI); ctx.fill(); ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(f3.x,f3.y+9,9,0,Math.PI); ctx.stroke();
+      ctx.strokeStyle='#4a2a10'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(f3.x,f3.y+17); ctx.lineTo(f3.x-5,f3.y+48); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f3.x-5,f3.y+48); ctx.lineTo(f3.x-16,f3.y+72); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f3.x-5,f3.y+48); ctx.lineTo(f3.x+18,f3.y+70); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(f3.x,f3.y+30); ctx.lineTo(f3.x-18,f3.y+40); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f3.x,f3.y+30); ctx.lineTo(f3.x+16,f3.y+42); ctx.stroke();
+      ctx.fillStyle='rgba(201,169,110,0.9)'; ctx.font='italic 14px Georgia,serif'; ctx.fillText('\u201eNie wieder Treppen.\u201c',28,30);
+      var sT3=new THREE.CanvasTexture(c);
+      var sM3=new THREE.MeshBasicMaterial({map:sT3,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var sMsh3=new THREE.Mesh(new THREE.PlaneGeometry(7.2,4.1),sM3);
+      sMsh3.position.set(4,FLOOR_Y+2.8,-932); scene.add(sMsh3);
+    })();
+
+    // ── BIKINI BOTTOM: Stickman — Ins Meer fallen ──
+    (function(){
+      var c=document.createElement('canvas'); c.width=560; c.height=320;
+      var ctx=c.getContext('2d');
+      var bg=ctx.createLinearGradient(0,0,0,320); bg.addColorStop(0,'rgba(100,160,210,0.72)'); bg.addColorStop(0.42,'rgba(60,120,180,0.68)'); bg.addColorStop(0.43,'rgba(20,80,140,0.82)'); bg.addColorStop(1,'rgba(8,40,80,0.75)');
+      ctx.fillStyle=bg; ctx.fillRect(0,0,560,320);
+      ctx.strokeStyle='rgba(140,210,255,0.65)'; ctx.lineWidth=2.5; ctx.beginPath(); ctx.moveTo(0,136); ctx.lineTo(560,136); ctx.stroke();
+      // Steg
+      ctx.fillStyle='rgba(100,65,30,0.85)'; ctx.fillRect(150,0,260,18); ctx.fillRect(155,18,250,8);
+      ctx.fillStyle='rgba(80,50,22,0.6)'; [168,198,228,258,288,318,348,378].forEach(function(px){ctx.fillRect(px,0,6,26);});
+      ctx.strokeStyle='rgba(201,169,110,0.5)'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(150,26); ctx.lineTo(410,26); ctx.stroke();
+      // Splash
+      ctx.fillStyle='rgba(160,220,255,0.75)'; [[242,136],[280,130],[318,134],[256,125],[302,122]].forEach(function(p){ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-8,p[1]-18);ctx.lineTo(p[0]+8,p[1]-18);ctx.closePath();ctx.fill();});
+      ctx.strokeStyle='rgba(140,210,255,0.6)'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(280,136,28,Math.PI,0); ctx.stroke(); ctx.beginPath(); ctx.arc(280,136,18,Math.PI,0); ctx.stroke();
+      [[240,165],[268,180],[295,158],[320,172],[350,162]].forEach(function(b){ctx.strokeStyle='rgba(180,235,255,0.5)';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(b[0],b[1],5,0,Math.PI*2);ctx.stroke();});
+      // HIM fallend
+      var m5={x:308,y:75};
+      ctx.fillStyle='#8B5E3C'; ctx.beginPath(); ctx.arc(m5.x,m5.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.arc(m5.x,m5.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(m5.x-17,m5.y-5,34,7);
+      ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(m5.x-6,m5.y+2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(m5.x+6,m5.y+2,5.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(m5.x-6,m5.y+2,2.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(m5.x+6,m5.y+2,2.5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(m5.x,m5.y+9,5.5,0,Math.PI*2); ctx.stroke();
+      ctx.strokeStyle='#2a1a0a'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(m5.x,m5.y+17); ctx.lineTo(m5.x-4,m5.y+46); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m5.x-4,m5.y+46); ctx.lineTo(m5.x-16,m5.y+68); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m5.x-4,m5.y+46); ctx.lineTo(m5.x+14,m5.y+66); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(m5.x,m5.y+28); ctx.lineTo(m5.x+22,m5.y+12); ctx.stroke(); ctx.beginPath(); ctx.moveTo(m5.x,m5.y+28); ctx.lineTo(m5.x-22,m5.y+10); ctx.stroke();
+      // HER fallend, Haare fliegen
+      var f4={x:212,y:62};
+      ctx.fillStyle='#f0cfa0'; ctx.beginPath(); ctx.arc(f4.x,f4.y,17,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#4a2a10'; ctx.beginPath(); ctx.arc(f4.x,f4.y-5,17,Math.PI,0); ctx.fill(); ctx.fillRect(f4.x-17,f4.y-5,34,7);
+      ctx.lineWidth=5; ctx.strokeStyle='#4a2a10'; ctx.beginPath(); ctx.moveTo(f4.x-17,f4.y-5); ctx.lineTo(f4.x-32,f4.y-28); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f4.x+15,f4.y-5); ctx.lineTo(f4.x+30,f4.y-22); ctx.stroke();
+      ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(f4.x-6,f4.y+2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(f4.x+6,f4.y+2,5.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#1a1008'; ctx.beginPath(); ctx.arc(f4.x-6,f4.y+2,2.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(f4.x+6,f4.y+2,2.5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#1a1008'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(f4.x,f4.y+9,5.5,0,Math.PI*2); ctx.stroke();
+      ctx.strokeStyle='#4a2a10'; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(f4.x,f4.y+17); ctx.lineTo(f4.x+5,f4.y+46); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f4.x+5,f4.y+46); ctx.lineTo(f4.x-8,f4.y+68); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f4.x+5,f4.y+46); ctx.lineTo(f4.x+18,f4.y+66); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(f4.x,f4.y+28); ctx.lineTo(f4.x+22,f4.y+12); ctx.stroke(); ctx.beginPath(); ctx.moveTo(f4.x,f4.y+28); ctx.lineTo(f4.x-20,f4.y+14); ctx.stroke();
+      // Kamera taumelnd
+      ctx.save(); ctx.translate(265,52); ctx.rotate(0.6);
+      ctx.fillStyle='#1e1208'; ctx.fillRect(-11,-7,22,14); ctx.fillStyle='#a0d8f8'; ctx.beginPath(); ctx.arc(2,0,5,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='#c9a96e'; ctx.lineWidth=1.5; ctx.strokeRect(-11,-7,22,14); ctx.restore();
+      // Geschwindigkeitslinien
+      ctx.strokeStyle='rgba(201,169,110,0.35)'; ctx.lineWidth=1.2; [[190,10,188,40],[240,5,238,35],[330,8,328,38],[375,12,373,42]].forEach(function(l){ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
+      ctx.fillStyle='rgba(201,169,110,0.9)'; ctx.font='italic 14px Georgia,serif'; ctx.fillText('\u201eMann sah es kommen. Wir nicht.\u201c',28,300);
+      var sT4=new THREE.CanvasTexture(c);
+      var sM4=new THREE.MeshBasicMaterial({map:sT4,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+      var sMsh4=new THREE.Mesh(new THREE.PlaneGeometry(7.2,4.1),sM4);
+      sMsh4.position.set(-4,FLOOR_Y+3.2,-1008); scene.add(sMsh4);
+    })();
   }
 
   // ═══════════════════════════════════════════════════════
@@ -1959,10 +2793,68 @@
       fogTemp.lerpColors(fogGarden, fogDark, t2);
       scene.fog.near = 8 - t2 * 6;
       scene.fog.far = 55 - t2 * 20;
-    } else {
+    } else if (cz > -700) {
+      // Garden between house and travel section (yes-panel zone)
       fogTemp.copy(fogGarden);
       scene.fog.near = 8;
-      scene.fog.far = 55;
+      scene.fog.far = 58;
+    } else if (cz > -710) {
+      // Transition into Asia room
+      var tAsia = (cz + 710) / 10;
+      fogTemp.lerpColors(fogInside, fogGarden, tAsia);
+      scene.fog.near = 3 + tAsia * 5;
+      scene.fog.far = 20 + tAsia * 38;
+    } else if (cz > -790) {
+      // Asia room — warm terracotta interior fog
+      var fogAsia = new THREE.Color(0x2a1808);
+      fogTemp.copy(fogAsia);
+      scene.fog.near = 5;
+      scene.fog.far = 80;
+    } else if (cz > -802) {
+      // Hallway to Africa
+      fogTemp.copy(fogInside);
+      scene.fog.near = 4;
+      scene.fog.far = 30;
+    } else if (cz > -882) {
+      // Africa room — amber desert interior fog
+      var fogAfrica = new THREE.Color(0x2a1a08);
+      fogTemp.copy(fogAfrica);
+      scene.fog.near = 5;
+      scene.fog.far = 80;
+    } else if (cz > -894) {
+      // Hallway to South America
+      fogTemp.copy(fogInside);
+      scene.fog.near = 4;
+      scene.fog.far = 30;
+    } else if (cz > -974) {
+      // South America room — emerald interior fog
+      var fogLatam = new THREE.Color(0x0a180a);
+      fogTemp.copy(fogLatam);
+      scene.fog.near = 5;
+      scene.fog.far = 80;
+    } else if (cz > -986) {
+      // Hallway to Bikini Bottom
+      fogTemp.copy(fogInside);
+      scene.fog.near = 4;
+      scene.fog.far = 30;
+    } else if (cz > -1100) {
+      // Bikini Bottom — deep ocean blue-teal fog
+      var fogOcean = new THREE.Color(0x081820);
+      fogTemp.copy(fogOcean);
+      scene.fog.near = 4;
+      scene.fog.far = 65;
+    } else if (cz > -1110) {
+      // Bikini Bottom exit transition
+      var tBikinOut = (cz + 1110) / 10;
+      var fogOcean2 = new THREE.Color(0x081820);
+      fogTemp.lerpColors(fogGarden, fogOcean2, tBikinOut);
+      scene.fog.near = 3 + tBikinOut * 5;
+      scene.fog.far = 20 + tBikinOut * 38;
+    } else {
+      // Final open garden / ending
+      fogTemp.copy(fogGarden);
+      scene.fog.near = 8;
+      scene.fog.far = 58;
     }
     scene.fog.color.copy(fogTemp);
     renderer.setClearColor(fogTemp);
@@ -1976,6 +2868,9 @@
   addLightBeams();
   buildFarmExterior();
   buildFurniture();
+  stickmanPlane = buildStickmanPlane();
+  buildBikiniBottom();
+  buildWorldDecor();
   createParticles();
   createRosePetals();
 
@@ -1985,6 +2880,31 @@
   var lookAt = new THREE.Vector3();
   var time   = 0;
   var lastCheck = 0;
+
+  // ── Travel music crossfade state ──
+  var travelMusicStarted = false;
+  var travelMusicFading  = false;
+
+  function crossfadeToTravelMusic() {
+    if (travelMusicStarted || travelMusicFading) return;
+    travelMusicFading = true;
+    var bgMusic     = document.getElementById('bg-music');
+    var travelAudio = document.getElementById('travel-music');
+    if (!travelAudio) { travelMusicFading = false; return; }
+
+    travelAudio.volume = 0;
+    travelAudio.currentTime = 0;
+    travelAudio.play().catch(function() { travelMusicFading = false; });
+
+    var step = 0;
+    var fade = setInterval(function() {
+      step++;
+      if (bgMusic.volume > 0.02) bgMusic.volume = Math.max(0, bgMusic.volume - 0.025);
+      else bgMusic.pause();
+      if (travelAudio.volume < 0.38) travelAudio.volume = Math.min(0.4, travelAudio.volume + 0.025);
+      if (step > 16) { clearInterval(fade); travelMusicStarted = true; travelMusicFading = false; }
+    }, 120);
+  }
 
   function animate() {
     requestAnimationFrame(animate);
@@ -2005,12 +2925,19 @@
       checkLazyLoads(currentZ);
       updatePanels(currentZ);
       updateFog(currentZ);
+      if (currentZ < -710) crossfadeToTravelMusic();
     }
 
     // Animate animals (gentle idle bob)
     animalGroups.forEach(function(ag, i) {
       ag.position.y = ag.userData.baseY + Math.sin(time * 0.5 + i * 1.8) * 0.04;
     });
+
+    // Animate stickman plane (gentle bob + tilt in future section)
+    if (stickmanPlane) {
+      stickmanPlane.position.y = 2.5 + Math.sin(time * 0.6) * 0.3;
+      stickmanPlane.rotation.z = Math.sin(time * 0.45) * 0.04;
+    }
 
     // Animate rose petals (gentle sway)
     if (rosePetals) {
